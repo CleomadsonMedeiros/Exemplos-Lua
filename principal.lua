@@ -23,6 +23,44 @@ local mapa = {
     ano = 1993
 }
 
+
+-- Abstração de Funções e Ordem das Funções
+
 -- Acessando valores por chaves
 print(mapa["nome"]) -- Lua
 print(mapa.ano) -- 1993
+
+function applyFunction(f, x)
+    return f(x)
+end
+
+function square(n)
+    return n * n
+end
+
+print(applyFunction(square, 5)) -- 25
+
+
+
+--Estratégias de Avaliação (Lazy, Eager)
+
+function f(x)
+    print("f called")
+    return x
+end
+
+function eagerEvaluation(x)
+    return x * 2
+end
+
+function lazyEvaluation(x)
+    return function() return x * 2 end
+end
+
+-- Eager evaluation
+local eager = eagerEvaluation(5)
+print(eager) -- 10
+
+-- Lazy evaluation
+local lazy = lazyEvaluation(5)
+print(lazy()) -- 10
