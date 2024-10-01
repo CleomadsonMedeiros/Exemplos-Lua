@@ -95,11 +95,17 @@ print(add("Lua", "Script")) -- "LuaScript"
 
 -- Salvando dados
 local file = io.open("data.txt", "w")
+if file == nil then
+    error("Arquivo não pode ser aberto")
+end
 file:write("Salvando dados em Lua\n")
 file:close()
 
 -- Lendo dados
 local file = io.open("data.txt", "r")
+if file == nil then
+    error("Arquivo não pode ser aberto")
+end
 local content = file:read("*all")
 print(content)
 file:close()
