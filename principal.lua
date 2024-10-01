@@ -64,3 +64,28 @@ print(eager) -- 10
 -- Lazy evaluation
 local lazy = lazyEvaluation(5)
 print(lazy()) -- 10
+
+
+--Gerenciamento de memória (garbage collector)
+
+local table1 = {1, 2, 3, 4}
+table1 = nil -- Liberar a referência
+
+collectgarbage() -- Forçar a coleta de lixo
+print(collectgarbage("count")) -- Mostra memória usada (em KB)
+
+
+--Polimorfismo(Sobrecarga e Paramétrico)
+function add(a, b)
+    if type(a) == "number" and type(b) == "number" then
+        return a + b
+    elseif type(a) == "string" and type(b) == "string" then
+        return a .. b
+    else
+        error("Tipos incompatíveis")
+    end
+end
+
+print(add(5, 10)) -- 15
+print(add("Lua", "Script")) -- "LuaScript"
+
