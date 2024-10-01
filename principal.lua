@@ -89,3 +89,17 @@ end
 print(add(5, 10)) -- 15
 print(add("Lua", "Script")) -- "LuaScript"
 
+
+
+--Persistência de Dados 
+
+-- Salvando dados
+local file = io.open("data.txt", "w")
+file:write("Salvando dados em Lua\n")
+file:close()
+
+-- Lendo dados
+local file = io.open("data.txt", "r")
+local content = file:read("*all")
+print(content)
+file:close()
