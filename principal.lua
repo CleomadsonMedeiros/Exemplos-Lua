@@ -1,5 +1,4 @@
 --Tipos e Checagem de Tipos (Primitivos, Compostos e Recursivos; Equivalência de Tipos)
-
 local a = 10
 local b = "Lua"
 local c = {1, 2, 3}
@@ -8,16 +7,15 @@ print(type(a)) -- number
 print(type(b)) -- string
 print(type(c)) -- table (lista,mapa,estrutura de dados: pilhas, filas, matrizes,etc).
 
---Mostrando exemplos do uso do table
---Lista
-
+--Mostrando exemplos do uso do table que pode ser usado como lista, mapa, pilha, fila, matriz, etc.
+--Exemplo em Lista
 local lista = {1, 2, 3, 4, 5}
 
 -- Acessando valores por índices numéricos
 print(lista[1]) -- 1
 print(lista[3]) -- 3
 
---Mapa(dicionario)
+--Exemplo em Mapa(dicionario)
 local mapa = {
     nome = "Lua",
     ano = 1993
@@ -25,7 +23,6 @@ local mapa = {
 
 
 -- Abstração de Funções e Ordem das Funções
-
 -- Acessando valores por chaves
 print(mapa["nome"]) -- Lua
 print(mapa.ano) -- 1993
@@ -41,9 +38,7 @@ end
 print(applyFunction(square, 5)) -- 25
 
 
-
 --Estratégias de Avaliação (Lazy, Eager)
-
 function f(x)
     print("f called")
     return x
@@ -66,8 +61,7 @@ local lazy = lazyEvaluation(5)
 print(lazy()) -- 10
 
 
---Gerenciamento de memória (garbage collector)
-
+--Gerenciamento de memória (garbage collector)---------
 local table1 = {1, 2, 3, 4}
 table1 = nil -- Liberar a referência
 
@@ -85,14 +79,11 @@ function add(a, b)
         error("Tipos incompatíveis")
     end
 end
-
 print(add(5, 10)) -- 15
 print(add("Lua", "Script")) -- "LuaScript"
 
 
-
 --Persistência de Dados 
-
 -- Salvando dados
 local file = io.open("data.txt", "w")
 if file == nil then
