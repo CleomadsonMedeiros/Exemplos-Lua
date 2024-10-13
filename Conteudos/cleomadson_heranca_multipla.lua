@@ -10,4 +10,4 @@ Button.__index = function (t, k)
     end
 end
 
--- Código feito por Cacilhas
+-- Código feito por Rodrigo Cacilhas
