@@ -4,6 +4,8 @@ require("historia")
 
 local quantidadeContinues = {}
 local modificador = {}
+modificador[1] = 0
+quantidadeContinues[1] = 0
 
 function EscolherDificuldade()
     print("Escolha a dificuldade:")
@@ -26,7 +28,7 @@ end
 
 function MensagemRolarDado()
     io.write("Digite qualquer tecla para rolar o dado: ")
-    _ = io.read()
+    local _ = io.read()
 end
 
 function Main()
@@ -42,15 +44,19 @@ function Main()
     print("Você tem " .. quantidadeContinues[1] .. " chances para completar sua missao. Boa sorte e que os dados estejam a seu favor!")
 
     local continue = 0
-    local pontosDado
+    local pontosDado = 0 
 
     while quantidadeContinues[1] >= 0 do
-        if MensagemRolarDado() then
-            pontosDado = RolarDado(20)
-            print("Você rolou o dado e obteve: " .. pontosDado)
-        end
 
-        continue = DecidirCaminho(pontosDado, continue, quantidadeContinues)
+        MensagemRolarDado()
+        pontosDado = RolarDado(20)
+        print("Você rolou o dado e obteve: " .. pontosDado)
+
+        continue = DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
+
+        if (continue == 11) then
+            break
+        end
 
         if(quantidadeContinues[1] < 2) then
             print("Voce perdeu uma chance! Restam " .. quantidadeContinues[1] .. " chances. Cuidado!")

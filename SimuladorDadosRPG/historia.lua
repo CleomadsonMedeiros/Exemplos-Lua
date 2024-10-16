@@ -1,5 +1,4 @@
 function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
-    assert(quantidadeContinues >= 0, "Não há mais continues! GAME OVER")
 
     if continue == 0 then
         print("Você começa em uma cela de uma prisão sendo uma criatura sem esperança")
