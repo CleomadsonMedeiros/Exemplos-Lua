@@ -2,10 +2,10 @@
 require("dado")
 require("historia")
 
-local quantidadeContinues = {}
+local quantidadeVidas = {}
 local modificador = {}
 modificador[1] = 0
-quantidadeContinues[1] = 0
+quantidadeVidas[1] = 0
 
 function EscolherDificuldade()
     print("Escolha a dificuldade:")
@@ -18,11 +18,11 @@ function EscolherDificuldade()
     dificuldade = tonumber(io.read())
 
     if dificuldade == 1 then
-        return 2
+        return 3
     elseif dificuldade == 2 then
-        return 1
+        return 2
     elseif dificuldade == 3 then
-        return 0
+        return 1
     end
 end
 
@@ -38,39 +38,33 @@ function Main()
     io.write("Por favor, antes de comecar sua jornada, digite seu nome: ")
     local nomeJogador = io.read()
 
-    quantidadeContinues[1] = EscolherDificuldade()
+    quantidadeVidas[1] = EscolherDificuldade()
 
     print("Olá, " .. nomeJogador .. ". Sua jornada começa agora!")
-    print("Você tem " .. quantidadeContinues[1] .. " chances para completar sua missao. Boa sorte e que os dados estejam a seu favor!")
+    print("Você tem " .. quantidadeVidas[1] .. " chances para completar sua missao. Boa sorte e que os dados estejam a seu favor!")
 
     local continue = 0
     local pontosDado = 0 
 
-    while quantidadeContinues[1] >= 0 do
-
+    while quantidadeVidas[1] > 0 do
+        
         MensagemRolarDado()
         pontosDado = RolarDado(20)
         print("Você rolou o dado e obteve: " .. pontosDado)
 
-        continue = DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
+        continue = DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
 
-        if (continue == 11) then
-            break
-        end
-
-        if(quantidadeContinues[1] < 2) then
-            print("Voce perdeu uma chance! Restam " .. quantidadeContinues[1] .. " chances. Cuidado!")
-        end
-
-        if quantidadeContinues[1] == 0 then
+        if quantidadeVidas[1] < 0 then
             print("Voce perdeu todas as chances! GAME OVER.")
             break
         end
+
+        if continue == 11 then
+            break
+        end
     end
 
-    if quantidadeContinues[1] >= 0 then
-        print("Parabens, " .. nomeJogador .. "! Voce completou sua jornada!")
-    end
+    print("Fim do LuaSouls")
 end
 
 Main()

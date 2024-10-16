@@ -1,4 +1,4 @@
-function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
+function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
 
     if continue == 0 then
         print("Você começa em uma cela de uma prisão sendo uma criatura sem esperança")
@@ -14,7 +14,9 @@ function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
             print("Parabéns, cúmulo da inutilidade, você fez um grande feito")
             print("A chave quebrou na tranca, e você passará o resto de sua vida nesta cela")
             print("VOCÊ MORREU!")
-            quantidadeContinues[1] = quantidadeContinues[1] - 1
+            quantidadeVidas[1] = quantidadeVidas[1] - 1
+            print("Voce perdeu uma chance! Restam " .. quantidadeVidas[1] .. " chances. Cuidado!")
+            return 1
         else
             print("Você abre a porta e prossegue por um corredor úmido e estreito")
             print("Em sua frente você encontra uma escada e decide subi-la")
@@ -32,7 +34,9 @@ function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
     if continue == 2 then
         if pontosDado <= 5 then
             print("A criatura te dá uma martelada e você morre.")
-            quantidadeContinues[1] = quantidadeContinues[1] - 1
+            quantidadeVidas[1] = quantidadeVidas[1] - 1
+            print("Voce perdeu uma chance! Restam " .. quantidadeVidas[1] .. " chances. Cuidado!")
+            return 2
         elseif pontosDado > 5 and pontosDado <= 11 then
             print("A criatura te acerta de raspão, você sai ferido mas consegue escapar.")
             print("Seu corpo, porém, foi gravemente ferido.")
@@ -62,7 +66,9 @@ function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
             print("Ao descer as escadas, você sente suas pernas tremerem, neste momento você se dá conta de uma coisa:")
             print("VOCÊ É SEDENTÁRIO!")
             print("Você não aguenta mais descer as escadas, suas pernas fraquejam, você cai e morre kkkkkkkk")
-            quantidadeContinues[1] = quantidadeContinues[1] - 1
+            quantidadeVidas[1] = quantidadeVidas[1] - 1
+            print("Voce perdeu uma chance! Restam " .. quantidadeVidas[1] .. " chances. Cuidado!")
+            return 3
         elseif pontosDado > 5 and pontosDado <= 11 then
             print("Você decide ir para o caminho da esquerda")
             print("No meio do caminho, um animal selvagem surge do nada e o ataca.")
@@ -92,7 +98,9 @@ function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
             print("Você tenta atravessar o portal, mas ele colapsa no último segundo.")
             print("Você é sugado para um vazio sem fim.")
             print("VOCÊ MORREU!")
-            quantidadeContinues[1] = quantidadeContinues[1] - 1
+            quantidadeVidas[1] = quantidadeVidas[1] - 1
+            print("Voce perdeu uma chance! Restam " .. quantidadeVidas[1] .. " chances. Cuidado!")
+            return 4
         elseif pontosDado > 5 and pontosDado <= 11 then
             print("Você atravessa o portal, mas uma força mística o ataca e suga sua energia vital.")
             print("Você perde parte de sua força espiritual.")
@@ -119,7 +127,9 @@ function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
             print("Você é cercado por sombras que te envolvem completamente.")
             print("Sua visão fica turva, e você desaparece na escuridão.")
             print("VOCÊ MORREU!")
-            quantidadeContinues[1] = quantidadeContinues[1] - 1
+            quantidadeVidas[1] = quantidadeVidas[1] - 1
+            print("Voce perdeu uma chance! Restam " .. quantidadeVidas[1] .. " chances. Cuidado!")
+            return 5
         elseif pontosDado > 5 and pontosDado <= 11 then
             print("Você caminha até encontrar um templo abandonado. Dentro, há uma figura misteriosa que oferece uma escolha.")
             print("'Escolha o caminho da luz ou da sombra.'")
@@ -147,7 +157,9 @@ function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
             print("Você é pego pela tempestade de areia e não consegue mais ver ou respirar.")
             print("A areia te consome.")
             print("VOCÊ MORREU!")
-            quantidadeContinues[1] = quantidadeContinues[1] - 1
+            quantidadeVidas[1] = quantidadeVidas[1] - 1
+            print("Voce perdeu uma chance! Restam " .. quantidadeVidas[1] .. " chances. Cuidado!")
+            return 6
         elseif pontosDado > 5 and pontosDado <= 11 then
             print("Você sobrevive à tempestade, mas se encontra perdido e desorientado.")
             print("Sua força está acabando.")
@@ -173,7 +185,9 @@ function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
         if pontosDado <= 5 then
             print("A criatura te incinera no primeiro golpe.")
             print("VOCÊ MORREU!")
-            quantidadeContinues[1] = quantidadeContinues[1] - 1
+            quantidadeVidas[1] = quantidadeVidas[1] - 1
+            print("Voce perdeu uma chance! Restam " .. quantidadeVidas[1] .. " chances. Cuidado!")
+            return 7
         elseif pontosDado > 5 and pontosDado <= 11 then
             print("Você consegue escapar, mas não sem antes se queimar gravemente.")
             modificador[1] = modificador[1] - 1
@@ -196,7 +210,9 @@ function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
         if pontosDado <= 5 then
             print("O ser ancestral te absorve em um piscar de olhos.")
             print("VOCÊ MORREU!")
-            quantidadeContinues[1] = quantidadeContinues[1] - 1
+            quantidadeVidas[1] = quantidadeVidas[1] - 1
+            print("Voce perdeu uma chance! Restam " .. quantidadeVidas[1] .. " chances. Cuidado!")
+            return 8
         elseif pontosDado > 5 and pontosDado <= 11 then
             print("Você tenta enfrentar o ser, mas sua presença te corrói de dentro para fora.")
             modificador[1] = modificador[1] - 3
@@ -219,7 +235,9 @@ function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
         if pontosDado <= 5 then
             print("Você se aproxima do trono, mas é consumido por uma escuridão profunda.")
             print("VOCÊ MORREU!")
-            quantidadeContinues[1] = quantidadeContinues[1] - 1
+            quantidadeVidas[1] = quantidadeVidas[1] - 1
+            print("Voce perdeu uma chance! Restam " .. quantidadeVidas[1] .. " chances. Cuidado!")
+            return 9
         elseif pontosDado > 5 and pontosDado <= 11 then
             print("Você senta no trono, mas seu corpo não suporta o poder que ele carrega.")
             modificador[1] = modificador[1] - 4
@@ -241,16 +259,21 @@ function DecidirCaminho(pontosDado, continue, quantidadeContinues, modificador)
         print("Com o poder do trono em suas mãos, você decide o destino do mundo.")
         if pontosDado <= 5 then
             print("Você perde o controle do poder e o mundo é destruído em uma explosão cataclísmica.")
-            print("Fim do jogo. VOCÊ FALHOU.")
+            quantidadeVidas[1] = quantidadeVidas[1] - 1
+            return 10
         elseif pontosDado > 5 and pontosDado <= 11 then
             print("Você tenta governar o mundo, mas sua fraqueza interior o consome.")
             print("O caos reina. Fim do jogo.")
+            return 11
         elseif pontosDado > 11 and pontosDado <= 15 then
             print("Você governa o mundo com sabedoria, mas há sacrifícios.")
             print("O mundo continua, mas há perdas irreparáveis. Fim do jogo.")
+            return 11
         elseif pontosDado > 16 then
             print("Você se torna o governante eterno de um novo mundo próspero e pacífico.")
             print("Fim do jogo. VOCÊ VENCEU!")
+            return 11
         end
     end
+    return continue
 end
