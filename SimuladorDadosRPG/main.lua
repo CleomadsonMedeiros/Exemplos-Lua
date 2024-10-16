@@ -11,6 +11,7 @@ function EscolherDificuldade()
     print("2. Médio (1 chance)")
     print("3. Difícil (0 chances)")
 
+    local dificuldade
     io.write("Digite o número da dificuldade desejada: ")
     dificuldade = tonumber(io.read())
 
@@ -35,11 +36,10 @@ function Main()
     io.write("Por favor, antes de comecar sua jornada, digite seu nome: ")
     local nomeJogador = io.read()
 
-    quantidadeContinues[1] = escolherDificuldade()
+    quantidadeContinues[1] = EscolherDificuldade()
 
     print("Olá, " .. nomeJogador .. ". Sua jornada começa agora!")
-    print("Você tem " ..
-    quantidadeContinues[1] .. " chances para completar sua missao. Boa sorte e que os dados estejam a seu favor!")
+    print("Você tem " .. quantidadeContinues[1] .. " chances para completar sua missao. Boa sorte e que os dados estejam a seu favor!")
 
     local continue = 0
     local pontosDado
