@@ -11,11 +11,8 @@ function EscolherDificuldade()
     print("2. Médio (1 chance)")
     print("3. Difícil (0 chances)")
 
-    local dificuldade
-    repeat
-        io.write("Digite o número da dificuldade desejada: ")
-        dificuldade = tonumber(io.read())
-    until dificuldade == 1 or dificuldade == 2 or dificuldade == 3
+    io.write("Digite o número da dificuldade desejada: ")
+    dificuldade = tonumber(io.read())
 
     if dificuldade == 1 then
         return 2
@@ -33,20 +30,6 @@ end
 
 function Main()
     math.randomseed(os.time())
-
-    local imagemASCII = [[
-                      /^--^\     /^--^\     /^--^\
-                      \____/     \____/     \____/
-                     /      \   /      \   /      \
-KAT                 |        | |        | |        |
-                     \__  __/   \__  __/   \__  __/
-|^|^|^|^|^|^|^|^|^|^|^|^\ \^|^|^|^/ /^|^|^|^|^\ \^|^|^|^|^|^|^|^|^|^|^|^|
-| | | | | | | | | | | | |\ \| | |/ /| | | | | | \ \ | | | | | | | | | | |
-########################/ /######\ \###########/ /#######################
-| | | | | | | | | | | | \/| | | | \/| | | | | |\/ | | | | | | | | | | | |
-|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
-]]
-    print(imagemASCII)
 
     io.write("Bem vindo ao RPG LuaSouls!\n")
     io.write("Por favor, antes de comecar sua jornada, digite seu nome: ")
