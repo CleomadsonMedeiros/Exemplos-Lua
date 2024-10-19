@@ -27,7 +27,7 @@ function EscolherDificuldade()
 end
 
 function MensagemRolarDado()
-    io.write("Digite qualquer tecla para rolar o dado: ")
+    io.write("Aperte Enter para rolar o dado: ")
     local _ = io.read()
 end
 
