@@ -9,12 +9,12 @@ quantidadeVidas[1] = 0
 
 function EscolherDificuldade()
     print("Escolha a dificuldade:")
-    print("1. Fácil (2 chances)")
-    print("2. Médio (1 chance)")
-    print("3. Difícil (0 chances)")
+    print("1. Facil (2 chances)")
+    print("2. Medio (1 chance)")
+    print("3. Dificil (0 chances)")
 
     local dificuldade
-    io.write("Digite o número da dificuldade desejada: ")
+    io.write("Digite o numero da dificuldade desejada: ")
     dificuldade = tonumber(io.read())
 
     if dificuldade == 1 then
@@ -40,8 +40,8 @@ function Main()
 
     quantidadeVidas[1] = EscolherDificuldade()
 
-    print("Olá, " .. nomeJogador .. ". Sua jornada começa agora!")
-    print("Você tem " .. quantidadeVidas[1] .. " chances para completar sua missao. Boa sorte e que os dados estejam a seu favor!")
+    print("Ola, " .. nomeJogador .. ". Sua jornada começa agora!")
+    print("Voce tem " .. quantidadeVidas[1] .. " chances para completar sua missao. Boa sorte e que os dados estejam a seu favor!")
 
     local continue = 0
     local pontosDado = 0 
@@ -50,7 +50,7 @@ function Main()
         
         MensagemRolarDado()
         pontosDado = RolarDado(20)
-        print("Você rolou o dado e obteve: " .. pontosDado)
+        print("Voce rolou o dado e obteve: " .. pontosDado)
 
         continue = DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
 
