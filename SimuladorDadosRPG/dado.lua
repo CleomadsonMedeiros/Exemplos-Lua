@@ -1,7 +1,7 @@
 -- Amanda de Jesus Melo
-function RolarDado(tipoDado)
+function RolarDado(tipoDado, modificador)
     assert(tipoDado > 0 and tipoDado <= 20, "O dado deve ter entre 1 e 20 lados.")
-    return math.random(1, tipoDado)
+    return math.random(1, tipoDado) + modificador
 end
 
 function RolarMultiplosDados(quantidade, tipoDado, modificador)

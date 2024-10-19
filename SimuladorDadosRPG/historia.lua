@@ -267,7 +267,7 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
             return 11
         elseif pontosDado > 11 and pontosDado <= 15 then
             print("\n\nVoce governa o mundo com sabedoria, mas ha sacrificios.")
-            print("O mundo continua, mas ha perdas irreparaveis. Fim do jogo.")
+            print("O mundo continua, mas ha perdas irreparaveis (vasco perdeu). Fim do jogo.")
             return 11
         elseif pontosDado > 16 then
             print("\n\nVoce se torna o governante eterno de um novo mundo prospero e pacifico.")

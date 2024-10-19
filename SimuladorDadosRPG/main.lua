@@ -49,7 +49,7 @@ function Main()
     while quantidadeVidas[1] > 0 do
         
         MensagemRolarDado()
-        pontosDado = RolarDado(20)
+        pontosDado = RolarDado(20, modificador[1])
         print("Voce rolou o dado e obteve: " .. pontosDado)
 
         continue = DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
