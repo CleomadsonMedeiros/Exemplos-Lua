@@ -1,7 +1,7 @@
 -- Cleomadson Dias Santos Medeiros
 function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
     if continue == 0 then
-        print("\n\nVoce comeca em uma cela de uma prision sendo uma criatura sem esperanca")
+        print("\n\nVoce comeca em uma cela de uma prisao sendo uma criatura sem esperanca, conhecida como Undead")
         print("Um cavalheiro lhe observa de cima e joga a chave para voce")
         print("Sem entender, voce pega a chave")
         print("Coincidentemente a chave e compativel com a porta da cela")
@@ -19,7 +19,7 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
             return 1
         else
             print("\n\nVoce abre a porta e prossegue por um corredor umido e estreito")
-            print("Em sua frente voce encontra uma escada e decide subila")
+            print("Em sua frente voce encontra uma escada e decide subi-la")
             print("Ao chegar em cima, voce encontra uma fogueira")
             print("De repente, voce escuta uma voz que diz: As fogueiras preservarao sua humanidade")
             print("Apos ouvir a voz, voce decide acender esta fogueira...")
@@ -79,7 +79,7 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
         elseif pontosDado > 11 and pontosDado <= 15 then
             print("\n\nVoce escolhe o caminho de baixo e desce as escadas com seguranca.")
             print("No subsolo, voce encontra uma antiga cripta. Ha uma espada luminosa fincada no chao.")
-            print("Voce se aproxima da espada, sentindo um poder incrivel emanando dela.")
+            print("Voce se aproxima da espada, sentindo um poder incrivel emanando dela, ao pegar a espada, esta perde sua luminosidade.")
             return 4
         elseif pontosDado > 16 then
             print("\n\nVoce ignora os dois caminhos e, com um impulso repentino, escala uma parede alta.")
@@ -93,7 +93,7 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
 
     if continue == 4 then
         print("\n\nAo avancar, voce sente que esta em uma encruzilhada de destinos. A jornada fica mais sombria.")
-        print("De repente, voce se depara com um portal gigante. Ele brilha intensamente, mas parece instavel.")
+        print("De repente, voce se depara com um portal. Ele brilha intensamente, mas parece instavel.")
         if pontosDado <= 5 then
             print("\n\nVoce tenta atravessar o portal, mas ele colapsa no ultimo segundo.")
             print("Voce e sugado para um vazio sem fim.")
@@ -113,7 +113,8 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
             return 5
         elseif pontosDado > 16 then
             print("\n\nVoce atravessa o portal com sucesso e emerge em um mundo de luz brilhante.")
-            print("Neste novo mundo, seres alados o recebem como um escolhido.")
+            print("Neste novo mundo, seres alados o recebem como um escolhido e transportam voce para o seu mundo.")
+            print("Voce se sente mais forte!")
             modificador[1] = modificador[1] + 3
             print("Modificador aumentado! Agora voce esta com um modificador de: " .. modificador[1])
             return 5
@@ -123,6 +124,7 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
     if continue == 5 then
         print("\n\nA jornada continua e voce sente que esta chegando perto do fim.")
         print("Uma voz em sua cabeca diz: 'Voce esta perto da verdade, mas a escuridao ainda pode te consumir.'")
+        print("Voce mal consegue olhar o que esta ao seu redor, pois tudo esta coberto pela escuridao")
         if pontosDado <= 5 then
             print("\n\nVoce e cercado por sombras que te envolvem completamente.")
             print("Sua visao fica turva, e voce desaparece na escuridao.")
@@ -142,8 +144,8 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
             print("Com cada golpe, voce sente sua energia se esvair, mas persiste.")
             return 6
         elseif pontosDado > 16 then
-            print("\n\nVoce desce a escadaria de um castelo dourado e encontra a Fonte da Eternidade.")
-            print("Beber dela pode te conceder poder inimaginavel.")
+            print("\n\nVoce desce a escadaria de um castelo dourado (conhecido como castelo de Anor Londo) e encontra o trono do rei falecido, Gywn.")
+            print("Ao chegar perto do trono, voce absorve um grande poder!")
             modificador[1] = modificador[1] + 4
             print("Modificador aumentado! Agora voce esta com um modificador de: " .. modificador[1])
             return 6
@@ -151,7 +153,7 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
     end
     
     if continue == 6 then
-        print("\n\nVoce avanca por uma estrada tortuosa e chega a um deserto infindavel.")
+        print("\n\nVoce avanca por uma estrada tortuosa e chega a um deserto de cinzas.")
         print("Uma tempestade de areia surge no horizonte, ameacando engolir tudo.")
         if pontosDado <= 5 then
             print("\n\nVoce e pego pela tempestade de areia e nao consegue mais ver ou respirar.")
@@ -168,11 +170,11 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
             return 7
         elseif pontosDado > 11 and pontosDado <= 15 then
             print("\n\nVoce atravessa o deserto e encontra um oasis escondido.")
-            print("O oasis te da uma chance de recuperar parte de sua forca.")
+            print("O oasis te da uma chance de recuperar parte de sua forca, mas nao eh seguro ficar neste local.")
             return 7
         elseif pontosDado > 16 then
             print("\n\nVoce evita a tempestade e encontra uma cidade perdida no deserto.")
-            print("Os habitantes te saudam como o Salvador.")
+            print("Tudo esta abandonado, mas voce encontra um bom lugar para descansar e se sente revigorado!.")
             modificador[1] = modificador[1] + 2
             print("Modificador aumentado! Agora voce esta com um modificador de: " .. modificador[1])
             return 7
@@ -197,7 +199,10 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
             print("\n\nVoce enfrenta a criatura e, apos uma dura batalha, consegue derrota-la.")
             return 8
         elseif pontosDado > 16 then
-            print("\n\nVoce invoca uma tempestade de agua que apaga a criatura e abre caminho pela montanha.")
+            print("\n\nDurante sua jornada, acabou encontrando um pergaminho com um selo azul.")
+            print("Voce percebe que o pergaminho libera em sua frente uma grande quantidade de água apenas por rasga-lo um pouco.")
+            print("Sem muitas escolhas você rasga o pergaminho inteiro")
+            print("Nesse momento uma tempestade de agua eh invocada e apaga a criatura, assim, o caminho pela montanha eh liberado.")
             modificador[1] = modificador[1] + 3
             print("Modificador aumentado! Agora voce esta com um modificador de: " .. modificador[1])
             return 8
@@ -214,7 +219,7 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
             print("Voce perdeu uma chance! Restam " .. quantidadeVidas[1] .. " chances. Cuidado!")
             return 8
         elseif pontosDado > 5 and pontosDado <= 11 then
-            print("\n\nVoce tenta enfrentar o ser, mas sua presenca te corrói de dentro para fora.")
+            print("\n\nVoce tenta enfrentar o ser, mas sua presenca te corrói de dentro para fora, voce sobrevive, porem esta muito fraco.")
             modificador[1] = modificador[1] - 3
             print("Seu modificador foi reduzido para: " .. modificador[1])
             return 9
@@ -263,7 +268,7 @@ function DecidirCaminho(pontosDado, continue, quantidadeVidas, modificador)
             return 10
         elseif pontosDado > 5 and pontosDado <= 11 then
             print("\n\nVoce tenta governar o mundo, mas sua fraqueza interior o consome.")
-            print("O caos reina. Fim do jogo.")
+            print("O caos e escuridao reina. Fim do jogo.")
             return 11
         elseif pontosDado > 11 and pontosDado <= 15 then
             print("\n\nVoce governa o mundo com sabedoria, mas ha sacrificios.")
