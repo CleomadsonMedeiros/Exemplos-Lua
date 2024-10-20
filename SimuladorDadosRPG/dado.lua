@@ -4,7 +4,7 @@ function RolarDado(tipoDado, modificador)
     return math.random(1, tipoDado) + modificador --Modificador a ser alterado por referencia na execução do código
 end
 
-function RolarMultiplosDados(quantidade, tipoDado, modificador)
+function RolarDado(quantidade, tipoDado, modificador)
     assert(quantidade > 0, "A quantidade de dados deve ser maior que 0.")
     assert(tipoDado > 0 and tipoDado <= 20, "O dado deve ter entre 1 e 20 lados.")
 
