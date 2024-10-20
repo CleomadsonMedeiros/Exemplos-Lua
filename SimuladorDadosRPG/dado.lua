@@ -10,7 +10,7 @@ function RolarMultiplosDados(quantidade, tipoDado, modificador)
 
     local soma = 0
     for i = 1, quantidade do
-        soma = soma + RolarDado(tipoDado)
+        soma = soma + math.random(1, tipoDado)
     end
 
     if type(modificador) == "number" then
