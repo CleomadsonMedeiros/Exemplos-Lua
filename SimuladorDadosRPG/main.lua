@@ -32,7 +32,6 @@ function MensagemRolarDado()
 end
 
 function Main()
-    math.randomseed(os.time())
 
     io.write("Bem vindo ao RPG LuaSouls!\n")
     io.write("Por favor, antes de comecar sua jornada, digite seu nome: ")
