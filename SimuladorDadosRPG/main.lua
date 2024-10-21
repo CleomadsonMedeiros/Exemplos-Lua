@@ -23,6 +23,8 @@ function EscolherDificuldade()
         return 2
     elseif dificuldade == 3 then
         return 1
+    else
+        error("Dificuldade invalida. Tente novamente.")
     end
 end
 
