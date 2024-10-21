@@ -39,6 +39,12 @@ end
 function Main()
 
     io.write("Bem vindo ao RPG LuaSouls!\n")
+    io.write(" _     _   _  ___    _____  _____ _   _ _      _____\n")
+    io.write("| |   | | | |/ _ \\  /  ___||  _  | | | | |    /  ___|\n")
+    io.write("| |   | | | / /_\\ \\ \\ `--. | | | | | | | |    \\ `--.\n")
+    io.write("| |   | | | |  _  |  `--. \\| | | | | | | |     `--. \\ \n")
+    io.write("| |___| |_| | | | | /\\__/ /\\ \\_/ / |_| | |____/\\__/ /\n")
+    io.write("\\_____/\\___/\\_| |_/ \\____/  \\___/ \\___/\\_____/\\____/\n")
     io.write("Por favor, antes de comecar sua jornada, digite seu nome: ")
     local nomeJogador = io.read()
 
