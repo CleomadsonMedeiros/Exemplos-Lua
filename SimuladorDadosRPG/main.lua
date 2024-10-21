@@ -38,6 +38,8 @@ end
 
 function Main()
 
+    math.randomseed(os.time())
+
     io.write("Bem vindo ao RPG LuaSouls!\n")
     io.write(" _     _   _  ___    _____  _____ _   _ _      _____\n")
     io.write("| |   | | | |/ _ \\  /  ___||  _  | | | | |    /  ___|\n")
