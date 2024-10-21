@@ -8,23 +8,29 @@ modificador[1] = 0
 quantidadeVidas[1] = 0
 
 function EscolherDificuldade()
-    print("Escolha a dificuldade:")
-    print("1. Facil (2 chances)")
-    print("2. Medio (1 chance)")
-    print("3. Dificil (0 chances)")
-
     local dificuldade
-    io.write("Digite o numero da dificuldade desejada: ")
-    dificuldade = tonumber(io.read())
+    while true do
+        -- Exibe o menu de dificuldade
+        print("Escolha a dificuldade:")
+        print("1. Facil (3 chances)")
+        print("2. Medio (2 chances)")
+        print("3. Dificil (1 chance)")
 
-    if dificuldade == 1 then
-        return 3
-    elseif dificuldade == 2 then
-        return 2
-    elseif dificuldade == 3 then
-        return 1
-    else
-        error("Dificuldade invalida. Tente novamente.")
+        -- Tenta ler e converter a entrada do usuário
+        io.write("Digite o numero da dificuldade desejada: ")
+        dificuldade = tonumber(io.read())
+
+        -- Tratamento de exceção: verifica a entrada do usuário
+        if dificuldade == 1 then
+            return 3  -- Fácil: 3 chances
+        elseif dificuldade == 2 then
+            return 2  -- Médio: 2 chances
+        elseif dificuldade == 3 then
+            return 1  -- Difícil: 1 chance
+        else
+            -- Exceção tratada: entrada inválida
+            print("Dificuldade invalida. Tente novamente.\n")
+        end
     end
 end
 
