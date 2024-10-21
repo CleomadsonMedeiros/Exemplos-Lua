@@ -1,7 +1,6 @@
 -- Amanda de Jesus Melo
 function RolarDado(...)
     local num_args = select("#", ...)  -- Conta quantos argumentos foram passados
-    math.randomseed(os.time) -- Permite a aleatoriedade dos números
     if num_args == 2 then
         local tipoDado, modificador = ...
         assert(tipoDado > 0 and tipoDado <= 20, "O dado deve ter entre 1 e 20 lados.")

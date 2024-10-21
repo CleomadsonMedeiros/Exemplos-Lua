@@ -16,11 +16,9 @@ function EscolherDificuldade()
         print("2. Medio (2 chances)")
         print("3. Dificil (1 chance)")
 
-        -- Tenta ler e converter a entrada do usuário
         io.write("Digite o numero da dificuldade desejada: ")
         dificuldade = tonumber(io.read())
 
-        -- Tratamento de exceção: verifica a entrada do usuário
         if dificuldade == 1 then
             return 3  -- Fácil: 3 chances
         elseif dificuldade == 2 then
@@ -28,7 +26,6 @@ function EscolherDificuldade()
         elseif dificuldade == 3 then
             return 1  -- Difícil: 1 chance
         else
-            -- Exceção tratada: entrada inválida
             print("Dificuldade invalida. Tente novamente.\n")
         end
     end
