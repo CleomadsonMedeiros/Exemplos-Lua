@@ -26,7 +26,7 @@ function EscolherDificuldade()
         elseif dificuldade == 3 then
             return 1  -- Difícil: 1 chance
         else
-            print("Nao foi dessa vez engraçadinho. Tente novamente.\n")
+            print("Nao foi dessa vez engracadinho. Tente novamente.\n")
         end
     end
 end
